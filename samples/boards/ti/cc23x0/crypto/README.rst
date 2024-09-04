@@ -70,3 +70,18 @@ Output
 [00:00:00.425,000] <dbg> crypto_cc23x0: crypto_cc23x0_ctr_drbg: AES operation completed
 [00:00:00.434,000] <inf> main: Output length: 64
 [00:00:00.439,000] <inf> main: CTR-DRBG - Match
+
+
+
+Output (DMA mode)
+*****************
+
+*** Booting Zephyr OS build 1e850fe7fdc8 ***
+[00:00:00.003,000] <dbg> os: k_sched_unlock: scheduler unlocked (0x200008c0:0)
+[00:00:00.011,000] <inf> main: Cipher Sample
+[00:00:00.015,000] <inf> main: --------------- CTR-DRBG Mode ---------------
+[00:00:00.023,000] <dbg> dma_cc23x0: dma_cc23x0_config: Configured channel 4 for 200016e4 to 400c0010 (16 bytes)
+[00:00:00.033,000] <dbg> dma_cc23x0: dma_cc23x0_config: Configured channel 5 for 400c0028 to 20001768 (64 bytes)
+[00:00:00.044,000] <dbg> crypto_cc23x0: crypto_cc23x0_ctr_drbg: AES operation completed
+[00:00:00.052,000] <inf> main: Output length: 64
+[00:00:00.057,000] <inf> main: CTR-DRBG - Match

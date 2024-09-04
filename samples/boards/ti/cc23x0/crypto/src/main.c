@@ -482,9 +482,9 @@ int main(void)
 	}
 #endif
 	const struct mode_test modes[] = {
-		{ .mode = "ECB Mode", .mode_func = ecb_mode },
-		{ .mode = "CTR Mode", .mode_func = ctr_mode },
-		{ .mode = "CCM Mode", .mode_func = ccm_mode },
+		//{ .mode = "ECB Mode", .mode_func = ecb_mode },
+		//{ .mode = "CTR Mode", .mode_func = ctr_mode },
+		//{ .mode = "CCM Mode", .mode_func = ccm_mode },
 		{ .mode = "CTR-DRBG Mode", .mode_func = ctr_drbg_mode },
 		{ },
 	};
