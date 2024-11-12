@@ -316,6 +316,11 @@ struct max14906_data {
 		union max14906_global_err glob_err;
 		union max14906_mask mask;
 	} glob;
+#if defined(CONFIG_GPIO_DIAGNOSTIC)
+	sys_slist_t diag_callbacks;
+	struct gpio_callback diag_cb_data;
+	const struct device *dev;
+#endif
 };
 
 #endif
