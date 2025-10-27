@@ -40,10 +40,8 @@ static int esp32_temp_sample_fetch(const struct device *dev, enum sensor_channel
 	if (temp_sensor_read_celsius(&data->temp_out) != ESP_OK) {
 		LOG_ERR("Temperature read error!");
 		rc = -EFAULT;
-		goto unlock;
 	}
 
-unlock:
 	k_mutex_unlock(&data->mutex);
 
 	return rc;
