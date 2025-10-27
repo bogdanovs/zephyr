@@ -295,7 +295,6 @@ static int rv3028_enter_eerd(const struct device *dev)
 	ret = rv3028_eeprom_wait_busy(dev, RV3028_EEBUSY_WRITE_POLL_MS);
 	if (ret) {
 		rv3028_exit_eerd(dev);
-		return ret;
 	}
 
 	return ret;
@@ -710,9 +709,6 @@ static int rv3028_alarm_set_callback(const struct device *dev, uint16_t id,
 
 	err = rv3028_update_reg8(dev, RV3028_REG_CONTROL2, RV3028_CONTROL2_AIE,
 				 callback != NULL ? RV3028_CONTROL2_AIE : 0);
-	if (err) {
-		goto unlock;
-	}
 
 unlock:
 	rv3028_unlock_sem(dev);
@@ -746,9 +742,6 @@ static int rv3028_update_set_callback(const struct device *dev, rtc_update_callb
 
 	err = rv3028_update_reg8(dev, RV3028_REG_CONTROL2, RV3028_CONTROL2_UIE,
 				 callback != NULL ? RV3028_CONTROL2_UIE : 0);
-	if (err) {
-		goto unlock;
-	}
 
 unlock:
 	rv3028_unlock_sem(dev);
